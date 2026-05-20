@@ -1,9 +1,23 @@
 <script lang="ts">
   import { p } from "sv-router/generated";
+  import Input from "../components/input.svelte";
   import toast from "svelte-french-toast";
+
+  let data = $state<{
+    email: string;
+    password: string;
+  }>({
+    email: "",
+    password: "",
+  });
+  let isLoading = $state(false);
   function onsubmit(e: SubmitEvent) {
+    isLoading = true;
     e.preventDefault();
-    toast.success("Login failed, please try again later");
+    setTimeout(() => {
+      toast.success("Login berhasil!");
+      isLoading = false;
+    }, 5000);
   }
 </script>
 
@@ -25,10 +39,11 @@
           <label class="text-xs text-[#3A3541DE] inline-block mb-1" for="email"
             >Email</label
           >
-          <input
-            type="text"
+          <Input
+            disabled={isLoading}
+            type="email"
+            bind:value={data.email}
             placeholder="Masukan email anda"
-            class="w-full border hover:border-zinc-300 text-sm transition-all focus-within:border-blue-800 active:border-blue-800 focus:border-blue-800 border-zinc-300 bg-zinc-50 outline-0 rounded-md px-3 py-2"
           />
         </div>
         <div class="flex-1 w-full flex flex-col">
@@ -36,10 +51,11 @@
             class="text-xs text-[#3A3541DE] inline-block mb-1"
             for="password">Password</label
           >
-          <input
+          <Input
+            disabled={isLoading}
             type="password"
+            bind:value={data.password}
             placeholder="Ketikan kata sandi anda"
-            class="w-full border hover:border-zinc-300 text-sm transition-all focus-within:border-blue-800 active:border-blue-800 focus:border-blue-800 border-zinc-300 bg-zinc-50 outline-0 rounded-md px-3 py-2"
           />
           <div class="text-right">
             <a
@@ -51,9 +67,11 @@
         <div class="flex-1 w-full flex flex-col">
           <button
             type="submit"
+            disabled={isLoading}
             class="w-full disabled:bg-zinc-400 disabled:text-[#cecece] bg-blue-800 transition-all hover:bg-blue-900 text-white cursor-pointer shadow-2xl border-none rounded-md text-sm border p-2"
-            >Login</button
           >
+            {isLoading ? "Loading..." : "Login"}
+          </button>
         </div>
       </form>
       <div>
