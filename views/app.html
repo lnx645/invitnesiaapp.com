@@ -4,14 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitnesia.com</title>
+    <script type="module" crossorigin src="/dist/app-dist.js"></script>
+    <link rel="stylesheet" crossorigin href="/index-dist.css" />
   </head>
-  <body data-base-url="{{ .AssetUrl }}">
+  <body data-base-url="">
     <div id="app"></div>
-    <script type="module" src="http://localhost:5173/src/main.ts"></script>
-
-    <script type="application/json">
-      window.data = {{.InjectedJson}}
-      window.apiUrl = "{{.ApiUrl}}"
-    </script>
   </body>
 </html>

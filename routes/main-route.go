@@ -16,6 +16,9 @@ type JsonData struct {
 }
 
 func MainRoute(app *fiber.App) {
+	app.Get("/", func(ctx fiber.Ctx) error {
+		return ctx.JSON("WKWKW")
+	})
 	app.Get("app/*", func(ctx fiber.Ctx) error {
 		if strings.Contains(ctx.Path(), ".") {
 			return ctx.Next()

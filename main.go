@@ -18,6 +18,9 @@ import (
 //go:embed public/*
 var publicDIR embed.FS
 
+//go:embed views/*
+var viewsDIR embed.FS
+
 func main() {
 	quit := make(chan os.Signal, 1)
 	//database init
@@ -32,7 +35,7 @@ func main() {
 		log.Fatal("Gagal Koneksi ke server Redis: " + err.Error())
 	}
 	app.RunAutoMigrate()
-	fiberConfig := config.FiberConfig()
+	fiberConfig := config.FiberConfig(viewsDIR)
 	appServer := fiber.New(*fiberConfig)
 
 	middleware.FiberMiddleware(appServer)

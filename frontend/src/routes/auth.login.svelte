@@ -68,7 +68,7 @@
           <button
             type="submit"
             disabled={isLoading}
-            class="w-full disabled:bg-zinc-400 disabled:text-[#cecece] bg-blue-800 transition-all hover:bg-blue-900 text-white cursor-pointer shadow-2xl border-none rounded-md text-sm border p-2"
+            class="w-full disabled:bg-zinc-400 disabled:text-[#cecece] bg-blue-600 transition-all hover:bg-blue-900 text-white cursor-pointer shadow-2xl border-none rounded-md text-sm border p-2"
           >
             {isLoading ? "Loading..." : "Login"}
           </button>

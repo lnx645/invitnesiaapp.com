@@ -14,8 +14,7 @@ func InitPublicDirectory(app *fiber.App, dir embed.FS) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	//ini adalah get data yang ada di folder public
-	app.Get("assets/*", static.New("", static.Config{
+	app.Get("/*", static.New("", static.Config{
 		FS: strippedFS,
 	}))
 }
