@@ -10,13 +10,16 @@
 		"postinstall": "sv-router"
 	},
 	"dependencies": {
+		"@fontsource-variable/rubik": "^5.2.8",
+		"@sglara/cn": "^1.0.0",
 		"@tailwindcss/vite": "^4.3.0",
 		"sv-router": "latest",
+		"svelte": "^5.55.8",
+		"svelte-french-toast": "^1.2.0",
 		"tailwindcss": "^4.3.0"
 	},
 	"devDependencies": {
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
-		"svelte": "^5.55.3",
 		"svelte-check": "^4.4.6",
 		"typescript": "^6.0.2",
 		"vite": "^8.0.8"
