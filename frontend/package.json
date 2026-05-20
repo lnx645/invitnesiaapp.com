@@ -13,6 +13,7 @@
 		"@fontsource-variable/rubik": "^5.2.8",
 		"@sglara/cn": "^1.0.0",
 		"@tailwindcss/vite": "^4.3.0",
+		"bits-ui": "^2.18.1",
 		"sv-router": "latest",
 		"svelte": "^5.55.8",
 		"svelte-french-toast": "^1.2.0",
